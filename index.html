@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Strona Prywatna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            background-color: #444;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        section {
+            display: none;
+            padding: 2rem;
+        }
+        section.active {
+            display: block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Moja strona prywatna</h1>
+    <p>Podróże • Przepisy • Inne</p>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('podroze')">Podróże</a>
+    <a href="#" onclick="showSection('przepisy')">Przepisy</a>
+    <a href="#" onclick="showSection('inne')">Inne</a>
+</nav>
+
+<main>
+    <section id="podroze" class="active">
+        <h2>Podróże</h2>
+        <p>Tutaj możesz opisać swoje wyprawy, dodać zdjęcia i wspomnienia.</p>
+        <ul>
+            <li>Norwegia – Lofoty 2024</li>
+            <li>Gruzja – Kazbek 2022</li>
+            <li>Madera – Trekking 2021</li>
+        </ul>
+    </section>
+
+    <section id="przepisy">
+        <h2>Przepisy</h2>
+        <p>Twoje ulubione dania i pomysły kulinarne.</p>
+        <ul>
+            <li>Chleb na zakwasie</li>
+            <li>Makaron z pesto i kurczakiem</li>
+            <li>Sałatka grecka</li>
+        </ul>
+    </section>
+
+    <section id="inne">
+        <h2>Inne</h2>
+        <p>Notatki, pomysły, cytaty, listy zadań – wszystko co potrzebujesz.</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Twoje Imię. Wszystkie prawa zastrzeżone.</p>
+</footer>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
